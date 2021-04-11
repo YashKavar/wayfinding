@@ -1,3 +1,31 @@
+<?php
+     if(isset($_POST['submit'])){
+
+        $otp_page = $_POST['otp-page'];
+        session_start();
+        include "connection.php";
+
+        $sql = "SELECT email_id,otp FROM signup WHERE otp = '$otp_page'";
+
+        $result = mysqli_query($conn,$sql) or die("query is failed.");
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "OTP is matched.";
+               $_SESSION['emails'] =  $row['email_id'];
+                header("Location: http://localhost/DE/wayfinding-master/forgate-password.php");
+            }
+        }  
+        else{
+            echo "OTP is not matched.";
+            header("Location: http://localhost/DE/wayfinding-master/otp.php");
+        } 
+     }
+?>
+
+    
+
+
 <!DOCTYPE html>
   
 <!-- <html xmlns="https://www.w3.org/1999/xhtml"> -->
@@ -15,19 +43,23 @@
     <!-- External css -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title> Contact Us </title>
+    <title> Otp </title>
     <style>
-        #username,#email,#message{
+        #email{
+            width: 100%;
+            float: inherit;
+        }
+        #password{
             width: 100%;
             float: inherit;
         }
         #submit{
-            width: 25%;
+            width: 50%;
             margin-top: 10px;
             float: inherit;
         }
         @media only screen and (max-width:620px){
-            #username{
+            #email{
                 width: 100%;
             }
             
@@ -36,12 +68,6 @@
             border-radius: 6px;
             border-color: aliceblue;
             margin: 6px;
-        }
-        textarea{
-            border-radius: 6px;
-            border-color: darkgray;
-            margin: 6px;
-            border: solid darkgray;
         }
         
     </style>
@@ -54,34 +80,16 @@
         ?>
     <!-- start header div -->
     <center>
-    <div id="header"><br>
-        <h3>Contact Us</h3>
+    <div id="header">
+        <h3>OTP</h3><br>
     </div>
-    <div class="contact">
-        <form action="contactsubmit.php" method="post">
-            <table> 
-                <tr>
-                    <td>    
-                        <input type="text" id="username" name="username" placeholder="Username" size="50" required>
-                    </td>
-                    <td>    
-                        <input type="email" id="email" name="email" placeholder="Email.." size="50" required>
-                    </td>
-                    
-                </tr>
-                <tr>        
-                    <td colspan="2">    
-                        <textarea name="message" id="message" placeholder="Message" rows="4" cols="110"></textarea>
-                    </td>
-                </tr>
-                <tr>    
-                    <td colspan="2" align="center">
-                        <button type="submit" name="submit" id="submit">Contact Us</button>
-                    </td>
-                </tr>
-                
-            </table>
-        </form> 
+    <div class="login">
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+            <lable for="OTP">Enter OTP :</lable><br>
+            <input type="tel" maxlength='6' name="otp-page"><br><br>
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
     </div>
     </center>
     <br><br><br><br>

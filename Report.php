@@ -10,12 +10,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
     
     <!-- External css -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title> Contact Us </title>
+    <title> Report Bug </title>
     <style>
         #username,#email,#message{
             width: 100%;
@@ -55,10 +55,10 @@
     <!-- start header div -->
     <center>
     <div id="header"><br>
-        <h3>Contact Us</h3>
+        <h3>Report Bug</h3>
     </div>
     <div class="contact">
-        <form action="contactsubmit.php" method="post">
+        <form action="Reportsubmite.php"method="post">
             <table> 
                 <tr>
                     <td>    
@@ -71,20 +71,21 @@
                 </tr>
                 <tr>        
                     <td colspan="2">    
-                        <textarea name="message" id="message" placeholder="Message" rows="4" cols="110"></textarea>
+                        <textarea name="message" id="message" rows="4" cols="110" placeholder="Type Bug here ...."></textarea>
                     </td>
                 </tr>
                 <tr>    
                     <td colspan="2" align="center">
-                        <button type="submit" name="submit" id="submit">Contact Us</button>
+                        <button type="submit" name="submit"> Report Bug </button>
                     </td>
                 </tr>
                 
             </table>
+<!--            <div> <a href="forgotpassword.php"> forgot password??? </a></div>-->
         </form> 
     </div>
     </center>
-    <br><br><br><br>
+    <br><br><br><br><br>
 
     <?php
             include 'includes/footer.php';

@@ -1,5 +1,3 @@
 # wayfinding
 
-Efficient shopping in short time
-
-Go to shopping.php
+Efficient shpping in short time 

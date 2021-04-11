@@ -19,10 +19,10 @@
                         echo "<script onload='contactus.php'>
                                  var no = confirm('Data not inserted due to some problem. Do you want to go to Contact Us page ?');
                                  if(no == true){
-                                    window.location.href = 'contactus.php';
+                                    window.location.href = 'user_contactus.php';
                                     }
                                 else{
-                                    window.location.href = 'index.php';
+                                    window.location.href = 'user_home.php';
                                     }
 
                             </script>";
@@ -32,10 +32,10 @@
                         echo "<script onload='contactus.php'>
                                 var yes = confirm('Thanks for contact us. Do you want to go to Home page ?');
                                  if(yes == true){
-                                    window.location.href = 'index.php';
+                                    window.location.href = 'user_home.php';
                                     }
                                 else{
-                                    window.location.href = 'contactus.php';
+                                    window.location.href = 'user_contactus.php';
                                     }
 
                               </script>";

@@ -3,7 +3,7 @@
                 $Username=$_POST['username'];
                 $Email=$_POST['email'];
                 $Message=$_POST['message'];
-                $insertquery = "INSERT INTO `contact` (`Name`, `Email`, `Message`) VALUES ('$Username', '$Email', '$Message')";
+                $insertquery = "INSERT INTO `reportbug` (`Name`, `Email`, `Message`) VALUES ('$Username', '$Email', '$Message')";
         
 //                echo "$insertquery<br/>";
                 
@@ -17,9 +17,9 @@
                     if(!mysqli_query($con, $insertquery))
                     {
                         echo "<script onload='contactus.php'>
-                                 var no = confirm('Data not inserted due to some problem. Do you want to go to Contact Us page ?');
+                                 var no = confirm('Due to some problem your bug are not reported. Do you want to go to Contact Us page?');
                                  if(no == true){
-                                    window.location.href = 'contactus.php';
+                                    window.location.href = 'Report.php';
                                     }
                                 else{
                                     window.location.href = 'index.php';
@@ -30,12 +30,12 @@
                     else
                     {
                         echo "<script onload='contactus.php'>
-                                var yes = confirm('Thanks for contact us. Do you want to go to Home page ?');
+                                var yes = confirm('Your bug is reported successfully. Do you want to go to Home page ?');
                                  if(yes == true){
                                     window.location.href = 'index.php';
                                     }
                                 else{
-                                    window.location.href = 'contactus.php';
+                                    window.location.href = 'Report.php';
                                     }
 
                               </script>";
