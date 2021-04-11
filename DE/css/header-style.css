@@ -1,0 +1,18 @@
+*{
+	box-sizing:border-box;
+	margin:0px;
+	padding:0px;
+}
+.header{ 
+    background-color: antiquewhite;  
+}
+.row{
+    padding: 20px 0px 20px 20px;
+    
+}
+.name{
+    padding: 8px 0px 0px 25px;
+}
+.name h1{
+    text-shadow: 3px 2px 2px red;
+}
