@@ -158,7 +158,7 @@
                 .column{
                         width: 90%;
             }
-            
+      }   
     </style>
     
 
